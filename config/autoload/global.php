@@ -13,5 +13,11 @@
  */
 
 return [
-    // ...
+    'db' => [
+        'driver' => 'Pdo',
+        'dsn'    => 'mysql:dbname=laminas_album;host=localhost;port=3310',
+        'driver_options' => [
+            1002 => 'SET NAMES \'UTF8\''
+        ],
+    ],
 ];

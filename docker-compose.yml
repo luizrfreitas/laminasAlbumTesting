@@ -1,8 +1,28 @@
+version: "3"
+
 services:
   laminas:
-    build: .
-    dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-     - "8081:80"
+      - "8081:80"
     volumes:
-     - .:/var/www
+      - .:/var/www
+
+  mysql-db:
+    image: mysql:latest
+    container_name: laminas-mysql-server
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laminas_album
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
