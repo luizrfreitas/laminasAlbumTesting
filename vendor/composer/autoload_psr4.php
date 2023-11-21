@@ -36,4 +36,5 @@ return array(
     'Brick\\VarExporter\\' => array($vendorDir . '/brick/varexporter/src'),
     'Application\\' => array($baseDir . '/module/Application/src'),
     'ApplicationTest\\' => array($baseDir . '/module/Application/test'),
+    'Album\\' => array($baseDir . '/module/Album/src'),
 );
