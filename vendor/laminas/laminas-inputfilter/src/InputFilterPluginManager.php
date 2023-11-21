@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Laminas\InputFilter;
 
-use Interop\Container\ContainerInterface; // phpcs:ignore
 use Laminas\Filter\FilterPluginManager;
 use Laminas\ServiceManager\AbstractPluginManager;
 use Laminas\ServiceManager\ConfigInterface;
@@ -11,6 +12,7 @@ use Laminas\ServiceManager\Factory\InvokableFactory;
 use Laminas\ServiceManager\ServiceManager;
 use Laminas\Stdlib\InitializableInterface;
 use Laminas\Validator\ValidatorPluginManager;
+use Psr\Container\ContainerInterface;
 use Psr\Container\ContainerInterface as PsrContainerInterface;
 
 use function get_class;
@@ -23,8 +25,10 @@ use function sprintf;
  *
  * @link ServiceManager
  *
- * @method InputFilterInterface|InputInterface get(string $name, ?array $options = null)
  * @psalm-import-type ServiceManagerConfiguration from ServiceManager
+ * @template InstanceType of InputFilterInterface|InputInterface
+ * @extends AbstractPluginManager<InstanceType>
+ * @method InputFilterInterface|InputInterface get(string $name, ?array $options = null)
  */
 class InputFilterPluginManager extends AbstractPluginManager
 {
@@ -44,9 +48,9 @@ class InputFilterPluginManager extends AbstractPluginManager
         'OptionalInputFilter' => OptionalInputFilter::class,
 
         // Legacy Zend Framework aliases
-        \Zend\InputFilter\InputFilter::class           => InputFilter::class,
-        \Zend\InputFilter\CollectionInputFilter::class => CollectionInputFilter::class,
-        \Zend\InputFilter\OptionalInputFilter::class   => OptionalInputFilter::class,
+        'Zend\InputFilter\InputFilter'           => InputFilter::class,
+        'Zend\InputFilter\CollectionInputFilter' => CollectionInputFilter::class,
+        'Zend\InputFilter\OptionalInputFilter'   => OptionalInputFilter::class,
 
         // v2 normalized FQCNs
         'zendinputfilterinputfilter'           => InputFilter::class,
@@ -141,7 +145,7 @@ class InputFilterPluginManager extends AbstractPluginManager
     /**
      * {@inheritDoc} (v3)
      *
-     * @psalm-assert InputFilterInterface|InputInterface $instance
+     * @psalm-assert InstanceType $instance
      */
     public function validate($instance)
     {

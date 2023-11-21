@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'c9d07b32a2e02bc0fc582d4f0c1b56cc' => $vendorDir . '/laminas/laminas-servicemanager/src/autoload.php',
     '7e9bd612cc444b3eed788ebbe46263a0' => $vendorDir . '/laminas/laminas-zendframework-bridge/src/autoload.php',
 );

@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Laminas\InputFilter;
 
 use ArrayAccess;
-use Interop\Container\ContainerInterface; // phpcs:ignore
 use Laminas\ServiceManager\Config;
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
 use Laminas\ServiceManager\ServiceManager;
+use Psr\Container\ContainerInterface;
 use Psr\Container\ContainerInterface as PsrContainer;
 
 use function assert;

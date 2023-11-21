@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitace89a6535b30b86deb746a61a548ddd
 {
     public static $files = array (
+        'c9d07b32a2e02bc0fc582d4f0c1b56cc' => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src/autoload.php',
         '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
     );
 
@@ -35,6 +36,7 @@ class ComposerStaticInitace89a6535b30b86deb746a61a548ddd
             'Laminas\\Loader\\' => 15,
             'Laminas\\Json\\' => 13,
             'Laminas\\InputFilter\\' => 20,
+            'Laminas\\I18n\\' => 13,
             'Laminas\\Hydrator\\' => 17,
             'Laminas\\Http\\' => 13,
             'Laminas\\Form\\' => 13,
@@ -45,10 +47,6 @@ class ComposerStaticInitace89a6535b30b86deb746a61a548ddd
             'Laminas\\Db\\' => 11,
             'Laminas\\Config\\' => 15,
             'Laminas\\ComponentInstaller\\' => 27,
-        ),
-        'I' => 
-        array (
-            'Interop\\Container\\' => 18,
         ),
         'B' => 
         array (
@@ -127,6 +125,10 @@ class ComposerStaticInitace89a6535b30b86deb746a61a548ddd
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-inputfilter/src',
         ),
+        'Laminas\\I18n\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-i18n/src',
+        ),
         'Laminas\\Hydrator\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-hydrator/src',
@@ -166,10 +168,6 @@ class ComposerStaticInitace89a6535b30b86deb746a61a548ddd
         'Laminas\\ComponentInstaller\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-component-installer/src',
-        ),
-        'Interop\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
         'Brick\\VarExporter\\' => 
         array (
